@@ -1,17 +1,28 @@
 # mips
-Miners Information Polling Service
+Miners info polling service.
 
-Main goal of the service is to poll data from CGMINER machines. It can handle thousands of machines, as much
-as your network infrastructure allow.
+Server implementation is very simple and for now only handles
+cgminer/bmminer machines.
 
-Note: this is a pilot project, mostly tested on farms with up to 2k workers with well configured local network.
-Caution: we do not take any responsibility for damage this software may cause to your internal network traffic - we recommend testing on small amount of machines so you can fully avoid network flooding.
+Lucid chart scheme: https://lucid.app/lucidchart/5dd1968a-4f32-4b08-b787-3d31972484be/edit?viewport_loc=-398%2C-1753%2C2827%2C1343%2C0_0&invitationId=inv_25567ef1-4a69-48ef-96e4-b601984aa5ec#
 
-Process is very simple, and can be explained in couple of paragraphs:
+Features:
+<ol>
+    <li>Fetch IP list from remote destinations</li>
+    <li>Execute API command to fetch current miner info</li>
+    <li>Push collected data to remote location</li>
+    <li>Execute worker Firmware upgrade</li>
+    <li>Automatic worker reboot based on predefined rules</li>
+    <li>Local file copy to remote location</li>
+</ol>
 
-1. you setup configuration file (define URL from where to pull IP addresses of the workers)
-2. define postback URL's (endpoint to a third party service where data will be saved/presented)
-3. queue system that saves the data on local disk until third party service responded with success
-4. it automatically updates list of workers, in case you shring or expand your IP list it will adapt itself
-and request data only from defined machines
+Execute `make all` command to generate binary.
 
+This service is standalone application that can compile for any type of processor supported by GO compiler.
+
+1. Fetch IP list from remote desitnation
+In configuration.yaml we can specify several endpoints where lists of IP's are stored. Application automatically pushes and removes IP's from the queue.
+We attach listener to each IP which will trigger API request to machine every 3 minutes to obtain current status and information.
+Informations are save inside .json files on local machine. They are processed and pushed to remote endpoint from Queue list. In case remote server responds with
+error message is pushed to queue again, but repetition time is extended. After every successful push message is removed from the queue and file is deleted.
+2. 

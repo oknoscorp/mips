@@ -1,0 +1,7 @@
+farm_id: bih_hnk_east_1
+
+workers_list:
+  - https://example.com/list_of_local_ip_addresses.txt
+
+postbacks:
+  - https://thirdpartyservice.com/Receive.aspx
