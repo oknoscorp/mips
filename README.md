@@ -21,6 +21,7 @@ in case you network infrastructure is poorly configred (slow router, slow DHCP l
 You can post your questions to "Issues" section.
 
 ### Installation
+0. rename `configuration_example.yaml` to `configuration.yaml` so tool can fetch appropriate configuration
 1. run `make` command to compile the program
 2. setup `systemd` daemon so you can execute the process in the background
 3. run `systemctl start mips.service`
