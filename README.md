@@ -1,28 +1,23 @@
 # mips
-Miners info polling service.
+Miners information polling service. (cgminer/bmminer/asic miners)
 
-Server implementation is very simple and for now only handles
-cgminer/bmminer machines.
+Note: this a pilot projewith no long terms plans for project maintenance.
 
-Lucid chart scheme: https://lucid.app/lucidchart/5dd1968a-4f32-4b08-b787-3d31972484be/edit?viewport_loc=-398%2C-1753%2C2827%2C1343%2C0_0&invitationId=inv_25567ef1-4a69-48ef-96e4-b601984aa5ec#
 
-Features:
-<ol>
-    <li>Fetch IP list from remote destinations</li>
-    <li>Execute API command to fetch current miner info</li>
-    <li>Push collected data to remote location</li>
-    <li>Execute worker Firmware upgrade</li>
-    <li>Automatic worker reboot based on predefined rules</li>
-    <li>Local file copy to remote location</li>
-</ol>
+This software is useful for polling informations about cgminer/bmminer (asics) workers.
+Polled information can be pushed to third party endpoint with all of the data listed in cgminer stats API.
 
-Execute `make all` command to generate binary.
+Default port for the tool daemon :3011 and it is fetching information from :4028 workers API port.
 
-This service is standalone application that can compile for any type of processor supported by GO compiler.
+Mechanism is simple:
+- you define endpoint that contains list of IP addresses assigned to machines (one IP per line)
+- you configure how often poller will collect the data (default is every 3 minutes) per machine
+- you define third party endpoint where collected data should be pushed.
+- in case postback request fails (third party service responded with error code) it will retry sending but with a little bit delay (we assume gone server will come to life ASAP)
 
-1. Fetch IP list from remote desitnation
-In configuration.yaml we can specify several endpoints where lists of IP's are stored. Application automatically pushes and removes IP's from the queue.
-We attach listener to each IP which will trigger API request to machine every 3 minutes to obtain current status and information.
-Informations are save inside .json files on local machine. They are processed and pushed to remote endpoint from Queue list. In case remote server responds with
-error message is pushed to queue again, but repetition time is extended. After every successful push message is removed from the queue and file is deleted.
-2. 
+
+
+Caution: we suggest you to test tool on couple of dozens machines and expand it slowly. There is a chance you can get a network flood
+in case you network infrastructure is poorly configred (slow router, slow DHCP leases etc...)
+
+You can post your questions to "Issues" section.
