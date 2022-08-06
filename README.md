@@ -1,7 +1,7 @@
 # mips
 Miners information polling service. (cgminer/bmminer/asic miners)
 
-Note: this a pilot projewith no long terms plans for project maintenance.
+Note: this a pilot project with no long term plans for project maintenance.
 
 This software polls information about cgminer/bmminer (ASIC) workers.
 Polled information can be pushed to third party endpoint with all of the data listed in cgminer stats API.
