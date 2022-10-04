@@ -22,4 +22,4 @@ You can post your questions to "Issues" section.
 ### Installation
 1. rename `configuration_example.yaml` to `configuration.yaml` so tool can fetch appropriate configuration
 2. run `make` command to compile the program
-3. setup `systemd` daemon so you can execute the process in the background, or install `supervisor` for you version of OS
+3. setup `systemd` daemon so you can execute the process in the background, or install `supervisor` for your version of OS
