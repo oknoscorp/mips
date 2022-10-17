@@ -4,8 +4,8 @@ import (
 	"context"
 	"os"
 
-	"github.com/oknos-ba/mips/pkg/polling"
-	"github.com/oknos-ba/mips/pkg/server"
+	"github.com/oknoscorp/mips/pkg/polling"
+	"github.com/oknoscorp/mips/pkg/server"
 )
 
 func main() {

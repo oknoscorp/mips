@@ -8,8 +8,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/oknos-ba/mips/pkg/helpers"
-	"github.com/oknos-ba/mips/pkg/server"
+	"github.com/oknoscorp/mips/pkg/helpers"
+	"github.com/oknoscorp/mips/pkg/server"
 	log "github.com/sirupsen/logrus"
 )
 

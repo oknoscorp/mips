@@ -11,7 +11,7 @@ import (
 	"time"
 
 	"github.com/google/uuid"
-	"github.com/oknos-ba/mips/pkg/helpers"
+	"github.com/oknoscorp/mips/pkg/helpers"
 	log "github.com/sirupsen/logrus"
 )
 

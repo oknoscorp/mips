@@ -1,4 +1,4 @@
-module github.com/oknos-ba/mips
+module github.com/oknoscorp/mips
 
 go 1.18
 
