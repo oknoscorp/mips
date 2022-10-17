@@ -4,9 +4,9 @@ import (
 	"strings"
 	"time"
 
+	"github.com/oknos-ba/mips/pkg/command"
+	"github.com/oknos-ba/mips/pkg/helpers"
 	log "github.com/sirupsen/logrus"
-	"github.com/xasmirx/mips/pkg/command"
-	"github.com/xasmirx/mips/pkg/helpers"
 )
 
 type Response struct {

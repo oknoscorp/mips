@@ -8,9 +8,9 @@ import (
 	"sync"
 	"time"
 
+	"github.com/oknos-ba/mips/pkg/helpers"
+	"github.com/oknos-ba/mips/pkg/server"
 	log "github.com/sirupsen/logrus"
-	"github.com/xasmirx/mips/pkg/helpers"
-	"github.com/xasmirx/mips/pkg/server"
 )
 
 // maxTimeoutRepeats defines how many Timeout repeats can be executed

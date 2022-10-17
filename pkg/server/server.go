@@ -4,8 +4,8 @@ import (
 	"io/ioutil"
 	"os"
 
+	"github.com/oknos-ba/mips/pkg/helpers"
 	log "github.com/sirupsen/logrus"
-	"github.com/xasmirx/mips/pkg/helpers"
 	"gopkg.in/yaml.v3"
 )
 

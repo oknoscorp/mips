@@ -14,8 +14,8 @@ import (
 	"time"
 
 	"github.com/google/uuid"
+	"github.com/oknos-ba/mips/pkg/helpers"
 	log "github.com/sirupsen/logrus"
-	"github.com/xasmirx/mips/pkg/helpers"
 )
 
 const postbackQueueDir = "postback_queue"
