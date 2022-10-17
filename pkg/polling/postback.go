@@ -1,8 +1,5 @@
 package polling
 
-//gesundheitsgeschichte.com www.gesundheitsgeschichte.com
-//vitaliv.us www.vitaliv.us
-
 import (
 	"bytes"
 	"encoding/json"
